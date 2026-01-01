@@ -6,12 +6,10 @@ ARG RELEASE
 ENV GOPATH=/go
 ENV CGO_ENABLED=0
 
-RUN apt update && apt install -y git
-
 WORKDIR /build
 
 COPY . .
-RUN CGO_ENABLED=0 GOOS=$(go env GOOS) GOARCH=$(go env GOARCH) go build -tags kqueue -trimpath --ldflags "$(go run buildscripts/gen-ldflags.go)" -o minio 1>/dev/null
+RUN CGO_ENABLED=${CGO_ENABLED} GOOS=$(go env GOOS) GOARCH=$(go env GOARCH) go build -tags kqueue -trimpath --ldflags "$(go run buildscripts/gen-ldflags.go)" -o minio 1>/dev/null
 
 FROM gcr.io/distroless/static-debian12
 
