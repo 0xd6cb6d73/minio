@@ -54,3 +54,5 @@ s3-verify
 xattr
 xl-meta
 **.exe
+**.log
+bin/
