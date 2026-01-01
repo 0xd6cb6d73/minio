@@ -19,6 +19,54 @@ x-minio-common: &minio-common
 # using nginx reverse proxy, load balancing, you can access
 # it through port 9000.
 services:
+  set-vol-ownership:
+    # We can use any image we want as long as we can chown
+    image: ubuntu
+    # Need a user priviliged enough to chown
+    user: "root"
+    # Specify the group in question
+    group_add:
+      - '1000'
+    volumes:
+      # The volume to chown
+      - data1-1:/tmp/s/1-1
+      - data1-2:/tmp/s/1-2
+      - data1-3:/tmp/s/1-3
+      - data1-4:/tmp/s/1-4
+      - data1-5:/tmp/s/1-5
+      - data1-6:/tmp/s/1-6
+      - data1-7:/tmp/s/1-7
+      - data1-8:/tmp/s/1-8
+
+      - data2-1:/tmp/s/2-1
+      - data2-2:/tmp/s/2-2
+      - data2-3:/tmp/s/2-3
+      - data2-4:/tmp/s/2-4
+      - data2-5:/tmp/s/2-5
+      - data2-6:/tmp/s/2-6
+      - data2-7:/tmp/s/2-7
+      - data2-8:/tmp/s/2-8
+      
+      - data3-1:/tmp/s/3-1
+      - data3-2:/tmp/s/3-2
+      - data3-3:/tmp/s/3-3
+      - data3-4:/tmp/s/3-4
+      - data3-5:/tmp/s/3-5
+      - data3-6:/tmp/s/3-6
+      - data3-7:/tmp/s/3-7
+      - data3-8:/tmp/s/3-8
+      
+      - data4-1:/tmp/s/4-1
+      - data4-2:/tmp/s/4-2
+      - data4-3:/tmp/s/4-3
+      - data4-4:/tmp/s/4-4
+      - data4-5:/tmp/s/4-5
+      - data4-6:/tmp/s/4-6
+      - data4-7:/tmp/s/4-7
+      - data4-8:/tmp/s/4-8
+
+    command: chown -R 1000:1000 /tmp/s/
+
   minio1:
     <<: *minio-common
     hostname: minio1
@@ -31,6 +79,9 @@ services:
       - data1-6:/data6
       - data1-7:/data7
       - data1-8:/data8
+    depends_on:
+      set-vol-ownership:
+        condition: service_completed_successfully
 
   minio2:
     <<: *minio-common
@@ -44,6 +95,9 @@ services:
       - data2-6:/data6
       - data2-7:/data7
       - data2-8:/data8
+    depends_on:
+      set-vol-ownership:
+        condition: service_completed_successfully
 
   minio3:
     <<: *minio-common
@@ -57,6 +111,9 @@ services:
       - data3-6:/data6
       - data3-7:/data7
       - data3-8:/data8
+    depends_on:
+      set-vol-ownership:
+        condition: service_completed_successfully
 
   minio4:
     <<: *minio-common
@@ -70,6 +127,9 @@ services:
       - data4-6:/data6
       - data4-7:/data7
       - data4-8:/data8
+    depends_on:
+      set-vol-ownership:
+        condition: service_completed_successfully
 
   nginx:
     image: nginx:1.19.2-alpine
