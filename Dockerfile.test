@@ -13,7 +13,7 @@ WORKDIR /build
 COPY . .
 RUN CGO_ENABLED=0 GOOS=$(go env GOOS) GOARCH=$(go env GOARCH) go build -tags kqueue -trimpath --ldflags "$(go run buildscripts/gen-ldflags.go)" -o minio 1>/dev/null
 
-FROM ubuntu:24.04
+FROM registry.access.redhat.com/ubi9/ubi-micro:latest
 
 ARG TARGETARCH
 ARG RELEASE
@@ -36,6 +36,8 @@ ENV MINIO_ACCESS_KEY_FILE=access_key \
     MC_CONFIG_DIR=/tmp/.mc
 
 COPY --from=build --chown=1000:1000 --chmod=+x /build/minio /usr/bin/minio
+
+RUN touch /tail && touch /head && chown 1000:1000 /head && chown 1000:1000 /tail
 
 USER 1000:1000
 
