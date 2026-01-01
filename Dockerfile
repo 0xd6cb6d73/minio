@@ -18,11 +18,32 @@ FROM gcr.io/distroless/static-debian12
 ARG TARGETARCH
 ARG RELEASE
 
+LABEL name="MinIO" \
+      vendor="MinIO Inc <dev@min.io>" \
+      maintainer="MinIO Inc <dev@min.io>" \
+      version="${RELEASE}" \
+      release="${RELEASE}" \
+      summary="MinIO is a High Performance Object Storage, API compatible with Amazon S3 cloud storage service." \
+      description="MinIO object storage is fundamentally different. Designed for performance and the S3 API, it is 100% open-source. MinIO is ideal for large, private cloud environments with stringent security requirements and delivers mission-critical availability across a diverse range of workloads."
+
+ENV MINIO_ACCESS_KEY_FILE=access_key \
+    MINIO_SECRET_KEY_FILE=secret_key \
+    MINIO_ROOT_USER_FILE=access_key \
+    MINIO_ROOT_PASSWORD_FILE=secret_key \
+    MINIO_KMS_SECRET_KEY_FILE=kms_master_key \
+    MINIO_UPDATE_MINISIGN_PUBKEY="RWTx5Zr1tiHQLwG9keckT0c45M3AGeHD6IvimQHpyRywVWGbP1aVSGav" \
+    MINIO_CONFIG_ENV_FILE=config.env \
+    MC_CONFIG_DIR=/tmp/.mc
+
 COPY --from=build --chown=1000:1000 --chmod=+x /build/minio /usr/bin/minio
 
-ENTRYPOINT ["/usr/bin/minio"]
+USER 1000:1000
 
+COPY CREDITS /licenses/CREDITS
+COPY LICENSE /licenses/LICENSE
+
+EXPOSE 9000
 VOLUME ["/data"]
 
-USER 1000:1000
+ENTRYPOINT ["/usr/bin/minio"]
 CMD ["minio"]
