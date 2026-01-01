@@ -46,4 +46,3 @@ EXPOSE 9000
 VOLUME ["/data"]
 
 ENTRYPOINT ["/usr/bin/minio"]
-CMD ["minio"]
