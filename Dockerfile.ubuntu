@@ -13,7 +13,7 @@ WORKDIR /build
 COPY . .
 RUN CGO_ENABLED=0 GOOS=$(go env GOOS) GOARCH=$(go env GOARCH) go build -tags kqueue -trimpath --ldflags "$(go run buildscripts/gen-ldflags.go)" -o minio 1>/dev/null
 
-FROM alpine:3.23
+FROM ubuntu:24
 
 ARG TARGETARCH
 ARG RELEASE
