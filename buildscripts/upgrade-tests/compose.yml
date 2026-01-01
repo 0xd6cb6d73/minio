@@ -15,7 +15,7 @@ x-minio-common: &minio-common
 # it through port 9000.
 services:
   set-vol-ownership:
-    image: ubuntu
+    image: registry.access.redhat.com/ubi9/ubi-micro:latest
     user: "root"
     group_add:
       - '1000'
