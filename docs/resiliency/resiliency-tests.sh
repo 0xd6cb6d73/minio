@@ -403,6 +403,8 @@ function main() {
 	# Run resiliency tests against MinIO
 	docker compose -f "${DOCKER_COMPOSE_FILE}" up -d
 
+	sleep 20
+
 	# Initial setup
 	docs/resiliency/resiliency-initial-script.sh
 	RESULT=$(grep "script passed" <resiliency-initial.log)
