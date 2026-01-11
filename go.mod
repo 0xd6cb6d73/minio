@@ -49,7 +49,7 @@ require (
 	github.com/klauspost/reedsolomon v1.12.6
 	github.com/lib/pq v1.10.9
 	github.com/lithammer/shortuuid/v4 v4.2.0
-	github.com/miekg/dns v1.1.69
+	github.com/miekg/dns v1.1.70
 	github.com/minio/cli v1.24.2
 	github.com/minio/console v1.7.6
 	github.com/minio/csvparser v1.0.0
@@ -279,10 +279,10 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.yaml.in/yaml/v2 v2.4.3 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
-	golang.org/x/mod v0.30.0 // indirect
+	golang.org/x/mod v0.31.0 // indirect
 	golang.org/x/net v0.48.0 // indirect
 	golang.org/x/text v0.32.0 // indirect
-	golang.org/x/tools v0.39.0 // indirect
+	golang.org/x/tools v0.40.0 // indirect
 	google.golang.org/genproto v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251222181119-0a764e51fe1b // indirect
