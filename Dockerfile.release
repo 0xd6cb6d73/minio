@@ -34,7 +34,7 @@ COPY dockerscripts/download-static-curl.sh /build/download-static-curl
 RUN chmod +x /build/download-static-curl && \
     /build/download-static-curl
 
-FROM registry.access.redhat.com/ubi9/ubi-micro:latest
+FROM registry.access.redhat.com/ubi10/ubi-micro:latest
 
 ARG RELEASE
 

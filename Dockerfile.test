@@ -11,7 +11,7 @@ WORKDIR /build
 COPY . .
 RUN CGO_ENABLED=${CGO_ENABLED} GOOS=$(go env GOOS) GOARCH=$(go env GOARCH) go build -tags kqueue -trimpath --ldflags "$(go run buildscripts/gen-ldflags.go)" -o minio 1>/dev/null
 
-FROM registry.access.redhat.com/ubi9/ubi-micro:latest
+FROM registry.access.redhat.com/ubi10/ubi-micro:latest
 
 ARG TARGETARCH
 ARG RELEASE
