@@ -1,4 +1,4 @@
-FROM golang:1.24-alpine AS build
+FROM golang:1.26-alpine AS build
 
 ARG TARGETARCH
 ARG RELEASE
@@ -34,7 +34,7 @@ COPY dockerscripts/download-static-curl.sh /build/download-static-curl
 RUN chmod +x /build/download-static-curl && \
     /build/download-static-curl
 
-FROM registry.access.redhat.com/ubi9/ubi-micro:latest
+FROM registry.access.redhat.com/ubi10/ubi-micro:latest
 
 ARG RELEASE
 
