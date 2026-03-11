@@ -13,7 +13,7 @@ tool (
 require (
 	aead.dev/mtls v0.3.0
 	cloud.google.com/go/storage v1.60.0
-	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.20.0
+	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.21.0
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.13.1
 	github.com/Azure/azure-sdk-for-go/sdk/storage/azblob v1.6.3
 	github.com/IBM/sarama v1.47.0
