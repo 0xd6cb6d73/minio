@@ -47,7 +47,7 @@ require (
 	github.com/klauspost/pgzip v1.2.6
 	github.com/klauspost/readahead v1.4.0
 	github.com/klauspost/reedsolomon v1.13.3
-	github.com/lib/pq v1.11.2
+	github.com/lib/pq v1.12.3
 	github.com/lithammer/shortuuid/v4 v4.2.0
 	github.com/miekg/dns v1.1.72
 	github.com/minio/cli v1.24.2
