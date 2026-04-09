@@ -92,8 +92,8 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0
 	github.com/xdg/scram v1.0.5
 	github.com/zeebo/xxh3 v1.1.0
-	go.etcd.io/etcd/api/v3 v3.6.7
-	go.etcd.io/etcd/client/v3 v3.6.7
+	go.etcd.io/etcd/api/v3 v3.6.10
+	go.etcd.io/etcd/client/v3 v3.6.10
 	go.uber.org/atomic v1.11.0
 	go.uber.org/zap v1.27.1
 	goftp.io/server/v2 v2.0.2
@@ -264,7 +264,7 @@ require (
 	github.com/xdg/stringprep v1.0.3 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
-	go.etcd.io/etcd/client/pkg/v3 v3.6.7 // indirect
+	go.etcd.io/etcd/client/pkg/v3 v3.6.10 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect
 	go.opentelemetry.io/contrib/detectors/gcp v1.39.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.63.0 // indirect
