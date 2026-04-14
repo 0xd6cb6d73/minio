@@ -29,7 +29,7 @@ require (
 	github.com/dustin/go-humanize v1.0.1
 	github.com/eclipse/paho.mqtt.golang v1.5.1
 	github.com/elastic/go-elasticsearch/v7 v7.17.10
-	github.com/fatih/color v1.18.0
+	github.com/fatih/color v1.19.0
 	github.com/felixge/fgprof v0.9.5
 	github.com/fraugster/parquet-go v0.12.0
 	github.com/go-ldap/ldap/v3 v3.4.12
