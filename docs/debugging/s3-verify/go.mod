@@ -1,10 +1,8 @@
 module github.com/minio/minio/docs/debugging/s3-verify
 
-go 1.24.0
+go 1.25
 
-toolchain go1.24.11
-
-require github.com/minio/minio-go/v7 v7.0.98
+require github.com/minio/minio-go/v7 v7.0.100
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
