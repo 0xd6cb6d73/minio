@@ -22,7 +22,7 @@ require (
 	github.com/buger/jsonparser v1.1.2
 	github.com/cespare/xxhash/v2 v2.3.0
 	github.com/cheggaaa/pb v1.0.29
-	github.com/coreos/go-oidc/v3 v3.17.0
+	github.com/coreos/go-oidc/v3 v3.18.0
 	github.com/coreos/go-systemd/v22 v22.6.0
 	github.com/cosnicolaou/pbzip2 v1.0.6
 	github.com/dchest/siphash v1.2.3
